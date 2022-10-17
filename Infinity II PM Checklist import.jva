@@ -1,0 +1,22 @@
+// Dieses Script fuellt die Inst-Chekliste mit den
+// Daten aus "Z:\TTemp\InstDaten.txt" und
+// Schreibt die neue Datei nach
+// "Z:\Ttemp\_Inst_Checkliste.pdf"
+// (c) R. Das Gupta
+// Letzte Aenderung: 2022-Feb.01
+
+// Variablen Definition
+var DataFile = "/z/TTemp/LCDaten.txt"
+var rdgPath = "/z/TTemp/PM-Checklist_LC.pdf"
+
+// Systemdaten und SO# einlesen
+   var result = rdgGetData();
+// Datei mit den Daten speichern
+   if (!result)
+     {   
+        rdgSaveFile (rdgPath);
+     }
+     else
+     {
+        app.alert ("Achtung! Datei: " + DataFile + " nicht vorhanden.")
+     }
