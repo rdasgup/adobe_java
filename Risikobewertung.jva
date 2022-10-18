@@ -1,0 +1,22 @@
+// Dieses Script fuellt die Risikobewertung mit den
+// Daten aus "Z:\TTemp\RisikobewertungDaten.txt" und
+// Schreibt die neue Datei nach
+// "Z:\Ttemp\_PM_Checkliste.pdf"
+// (c) R. Das Gupta
+// Letzte Aenderung: 2022-Mrz-07
+
+// Variablen Definition
+var DataFile = "/T/RisikobewertungDaten.txt"
+var rdgPath = "/Z/TTemp/Risikobewertung.pdf"
+
+// Systemdaten und SO# einlesen
+   var result = rdgGetData (DataFile,0);
+// Datei mit den Daten speichern
+   if (!result)
+     {   
+        rdgSaveFile (rdgPath);
+     }
+     else
+     {
+        app.alert ("Achtung! Datei: " + DataFile + " nicht vorhanden.")
+     }
